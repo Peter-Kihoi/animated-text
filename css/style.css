@@ -1,0 +1,202 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0, 0, 0,0.3),transparent), url(../images/background.png);
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 30px;
+    cursor: pointer;
+    margin-right: 80px;
+}
+
+nav ul {
+    flex: 1;
+    text-align: right;
+    padding-right:30px;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+nav ul li a {
+   color: #fff;
+   text-decoration: none; 
+   position: relative; 
+}
+
+nav ul li a::after {
+    content: '';
+    width:0;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    background-color: #fff;
+    
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+/* humberger menu */
+humberger-menu {
+    width: 20px;
+    height: auto;
+    position: relative;
+    top: 20px;
+}
+.hamberger-top,
+.hamberger-middle,
+.hamberger-bottom {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    
+    background-color: #fff;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.hamberger-middle{
+    transform: translateY(5px);
+}
+.hamberger-bottom {
+    transform: translateY(10px);
+}
+
+.hamberger-click .hamberger-top {
+    transform: rotate(45deg);
+}
+.hamberger-click .hamberger-middle {
+    transform: rotate(-45deg);
+}
+.hamberger-click .hamberger-bottom {
+    display: none;
+}
+
+.text-box {
+    color: #fff;
+    position: absolute;
+    bottom: 8%;
+}
+.text-box p {
+    font-size: 50px;
+    font-weight: 600;
+
+}
+.text-box h1 {
+    font-size: 190px;
+    line-height: 160px;
+    margin-left: -10px;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background-image: url(../images/back.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+
+}
+
+.text-box h3{
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+
+.text-box a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    min-width: 100px;
+    height: auto;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: #fff 2px solid;
+    overflow: hidden;
+    z-index: 2;
+}
+
+
+
+span {
+    text-transform: capitalize;
+}
+
+.row a:hover span {
+    color: #000;
+}
+
+.anime {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #fff;
+    color: #000;
+    transform: translateY(100%);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+.row a:hover .anime{
+    transform: translateY(0);
+}
+
+.social-icons {
+    position: absolute;
+    right: 5%;
+    bottom: 8%;
+
+}
+.social-icons img {
+    width: 25px;
+    display: block;
+    margin: 25px 5px;
+}
+
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+}
